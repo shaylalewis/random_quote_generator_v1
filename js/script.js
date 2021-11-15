@@ -11,11 +11,11 @@ Project 4 - Random Quote Generator
  * `quotes` array 
  ***/
 let quotes = [
-    { quote: "I can find love, but I can't find money.", source: 'Yuta Nakamoto', citation: 'Buzzfeed Would You Rather Game', year: 2018 },
-    { quote: "Remember, licking doorknobs on other planets is illegal!", source: 'Spongebob', citation: "One Krabs Trash", year: 2002 },
-    { quote: "I lived in America four years that's why I'm here.", source: 'SM Rookies Promo Video', citation: 'Jae Jung', year: 2013 },
-    { quote: 'Meow means woof in cat.', source: 'George Carlin', citation: 'Good Reads', year: 'Unknown' },
-    { quote: "If I looked like that I wouldn't leave the house all day. Not for all the bells in the world", source: 'Opal', citation: 'Animal Crossing Population Growing', year: 2002 }
+    { quote: "I can find love, but I can\'t find money.", source: "Yuta Nakamoto", citation: "Buzzfeed Would You Rather Game", year: 2018 },
+    { quote: "Remember, licking doorknobs on other planets is illegal!", source: "Spongebob", citation: "One Krabs Trash", year: 2002 },
+    { quote: "I lived in America four years that\'s why I\'m here.", source: "SM Rookies Promo Video", citation: "Jae Jung", year: 2013 },
+    { quote: "Meow means woof in cat.", source: "George Carlin", citation: "Good Reads", year: "Unknown" },
+    { quote: "If I looked like that I wouldn\'t leave the house all day. Not for all the bells in the world", source: "Opal", citation: "Animal Crossing Population Growing", year: 2002 }
 ];
 
 
@@ -28,7 +28,7 @@ function getRandomQuote() {
     return quotes[random];
 }
 
-console.log(getRandomQuote());
+// console.log(getRandomQuote());
 
 /***
  * `printQuote` function
@@ -36,9 +36,22 @@ console.log(getRandomQuote());
 
 function printQuote() {
 
-    const
+    const see = getRandomQuote();
+    let show = `<p class="quote"> ${see.quote}</p> <p class="source"> ${see.source}`;
 
+    if (see.citation !== '') {
+        show += `<span class="citation"> ${see.citation}</span>`;
+    } else if (see.year !== "Unknown") {
+        show += `<span class="year> ${see.year}</span>"`;
+    } else {
+        show += `${see.source}</p>`;
+    }
 }
+
+
+document.getElementById('quote-box').innerHTML = printQuote();
+
+
 
 
 
