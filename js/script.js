@@ -46,10 +46,10 @@ function printQuote() {
     } else {
         show += `${see.source}</p>`;
     }
+    document.getElementById('quote-box').innerHTML = show;
 }
 
-
-document.getElementById('quote-box').innerHTML = printQuote();
+printQuote();
 
 
 
