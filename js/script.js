@@ -10,6 +10,8 @@ Project 4 - Random Quote Generator
 /*** 
  * `quotes` array 
  ***/
+
+// an array of objects that includes a quote, source, citation, and year
 let quotes = [
     { quote: "I can find love, but I can\'t find money.", source: "Yuta Nakamoto", citation: "Buzzfeed Would You Rather Game", year: 2018 },
     { quote: "Remember, licking doorknobs on other planets is illegal!", source: "Spongebob", citation: "One Krabs Trash", year: 2002 },
@@ -23,16 +25,22 @@ let quotes = [
  * `getRandomQuote` function
  ***/
 
+/* this function uses math.random to cycle through
+   the quotes in the above array at random. It takes a number from 0 to the length of the
+   array to return a quote */
+
 function getRandomQuote() {
     const random = Math.floor(Math.random() * quotes.length);
     return quotes[random];
 }
 
-// console.log(getRandomQuote());
 
 /***
  * `printQuote` function
  ***/
+
+/* the printQuote function adds html and checks to see if the quote has a citation and year
+   if it has a citation or year then it will add that html and if not it closes the p tag for source */
 
 function printQuote() {
 
